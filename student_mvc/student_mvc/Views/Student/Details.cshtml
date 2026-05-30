@@ -1,0 +1,110 @@
+﻿@model Student
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/student-details.css" />
+}
+
+@{
+    // استخراج الحرف الأول من الاسم الأول والاسم الأخير لـ دائرة الـ Avatar
+    string firstInitial = !string.IsNullOrEmpty(Model.FirstName) ? Model.FirstName.Substring(0, 1).ToUpper() : "S";
+    string lastInitial = !string.IsNullOrEmpty(Model.LastName) ? Model.LastName.Substring(0, 1).ToUpper() : "";
+    string avatarInitials = firstInitial + lastInitial;
+}
+
+<h1 class="page-main-title">Student Details</h1>
+
+<div class="form-container">
+
+    <div class="form-card">
+
+        <!-- هيدر كارت تفاصيل الطالب العلوي المتطابق -->
+        <div class="details-profile-header">
+            <div class="avatar-circle">
+                @avatarInitials
+            </div>
+            <div class="profile-meta">
+                <h2>@Model.FirstName @Model.LastName</h2>
+                <p>Student ID: #@Model.Id</p>
+            </div>
+           
+        </div>
+
+        <!-- تقسيم محتوى البيانات لعمودين متناسقين تماماً -->
+        <div class="details-grid-body">
+
+            <!-- القسم الأيسر: المعلومات الشخصية -->
+            <div class="details-section">
+                <h3>Personal Information</h3>
+
+                <div class="info-row">
+                    <span class="info-label">First Name</span>
+                    <span class="info-value">@Model.FirstName</span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Last Name</span>
+                    <span class="info-value">@Model.LastName</span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Gender</span>
+                    <span class="info-value">@Model.Gender</span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Date Of Birth</span>
+                    <span class="info-value">@Model.DateOfBirth.ToShortDateString()</span>
+                </div>
+            </div>
+
+            <!-- القسم الأيمن: معلومات الاتصال والأكاديمية -->
+            <div class="details-section">
+                <h3>Contact & Academic Info</h3>
+
+                <div class="info-row">
+                    <span class="info-label">Email Address</span>
+                    <span class="info-value highlight-text">@Model.Email</span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Phone Number</span>
+                    <span class="info-value">@Model.Phone</span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Enrollment Date</span>
+                    <span class="info-value">@Model.EnrollmentDate.ToShortDateString()</span>
+                </div>
+
+                <div class="info-row vertical">
+                    <span class="info-label">Address Details</span>
+                    <div class="notes-box">
+                        @Model.Address
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- فوتر الأزرار أسفل الكارت بحواف 12px المتناسقة والمنظمة -->
+        <div class="details-actions-footer">
+            
+            <a asp-action="Edit" asp-controller="Student" asp-route-id="@Model.Id" class="btn-action edit-action-btn">
+                Edit Details
+            </a>
+
+            <form asp-action="Deleteitem" asp-controller="Student" method="post">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <button type="submit" class="delete-btn">
+                    Delete Student
+                </button>
+            </form>
+
+            <a asp-action="Index" asp-controller="Student" class="btn-action back-action-btn">
+                Back to List
+            </a>
+
+        </div>
+
+    </div>
+</div>

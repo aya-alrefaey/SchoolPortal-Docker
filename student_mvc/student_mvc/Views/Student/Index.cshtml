@@ -1,0 +1,40 @@
+﻿@model List<Student>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/students.css" />
+}
+
+<h1 class="title">All Students</h1>
+
+<div class="top-bar">
+    <a class="btn" asp-action="Create" asp-controller="Student">+ Add Student</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Email</td>
+                <td>
+                    <a class="edit" asp-action="Edit" asp-controller="Student" asp-route-id="@item.Id">Edit</a>
+                    <a class="details" asp-controller="Student" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a class="delete" asp-action="Delete" asp-controller="Student" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<grade_mvc.Viewmodels.IndexViewModel>
+
+@{
+    ViewData["Title"] = "Students Grades";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/student-form.css" />
+    <link rel="stylesheet" href="~/css/grades-simple-list.css" />
+}
+
+<div class="form-container">
+    <div class="form-card">
+        
+        <h1 class="page-main-title">All Grades</h1>
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div class="alert alert-warning">
+                @ViewBag.ErrorMessage
+            </div>
+        }
+
+        <div class="grades-list-body">
+            
+            <div class="action-header-wrapper">
+                <a asp-action="Create" class="btn-add-primary">+ Add New Grade</a>
+            </div>
+
+            <div class="table-container">
+                <table class="grades-table">
+                    <thead>
+                        <tr>
+                            <th>Student Id</th>
+                            <th>Student Name</th>
+                            <th>Course Name</th>
+                            <th>Score</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (!Model.Any())
+                        {
+                            <tr>
+                                <td colspan="5" class="no-data text-center">No grades recorded yet.</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="student-name-cell">
+                                        @item.StudentId
+                                    </td>
+                                    <td class="student-name-cell">
+                                        @item.StudentName
+                                    </td>
+                                    
+                                    <td class="course-name-cell">
+                                        @item.CourseName
+                                    </td>
+                                    
+                                    <td>
+                                        <span class="badge @(item.Score >= 50 ? "badge-success" : "badge-danger")">
+                                            @item.Score / 100
+                                        </span>
+                                    </td>
+                                    
+                                    <td class="text-center">
+                                        <a asp-action="Details" asp-route-id="@item.GradeId" class="details-action-btn">
+                                            View Details
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

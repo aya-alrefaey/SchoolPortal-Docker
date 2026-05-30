@@ -1,0 +1,107 @@
+﻿
+@model grade_mvc.Viewmodels.GradeViewModel
+
+@{
+    ViewData["Title"] = "Grade Details";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/grade-details.css" />
+}
+
+<div class="form-container">
+    
+    <h1 class="page-main-title">Grade Details</h1>
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-warning">
+            @ViewBag.ErrorMessage
+        </div>
+    }
+
+    <div class="form-card">
+        
+        <div class="details-profile-header">
+            <div class="avatar-circle">
+                @(Model.FirstName.Substring(0, 1).ToUpper())
+            </div>
+            <div class="profile-meta">
+                <h2>@Model.FirstName @Model.LastName</h2>
+                <p>Student ID: #@Model.Id</p>
+            </div>
+            
+            <div class="score-badge-wrapper">
+                <span class="badge @(Model.Score >= 50 ? "badge-success" : "badge-danger")">
+                    @Model.Score / 100 Score
+                </span>
+            </div>
+        </div>
+
+        <div class="details-grid-body">
+            
+            <div class="details-section">
+                <h3>📊 Academic Information</h3>
+                <div class="info-row">
+                    <span class="info-label">Course Name:</span>
+                    <span class="info-value highlight-text">@Model.CourseName</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Grade:</span>
+                    <span class="info-value highlight-text">
+                        <span class="badge @(Model.Score >= 50 ? "badge-success" : "badge-danger")">
+                            @Model.Score / 100 
+                        </span>
+                    </span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Grade Date:</span>
+                    <span class="info-value">@Model.GradeDate.ToString("yyyy-MM-dd")</span>
+                </div>
+                <div class="info-row vertical">
+                    <span class="info-label">Notes:</span>
+                    <span class="info-value notes-box">
+                        @(string.IsNullOrEmpty(Model.Notes) ? "No notes recorded for this grade." : Model.Notes)
+                    </span>
+                </div>
+            </div>
+
+            <div class="details-section">
+                <h3>👤 Student Profile</h3>
+                <div class="info-row">
+                    <span class="info-label">Email Address:</span>
+                    <span class="info-value">@Model.Email</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Phone Number:</span>
+                    <span class="info-value">@Model.Phone</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Date of Birth:</span>
+                    <span class="info-value">@(Model.DateOfBirth?.ToString("yyyy-MM-dd") ?? "NotAvailable")</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Gender:</span>
+                    <span class="info-value">@(Model.Gender?.ToString() ?? "Not Available")</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Enrollment Date:</span>
+                    <span class="info-value">@(Model.EnrollmentDate?.ToString("yyyy-MM-dd")??"NotAvailable")</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="details-actions-footer">
+            <a asp-action="Edit" asp-route-id="@Model.GradeId" class="btn-action edit-action-btn">Edit Grade</a>
+            <form asp-action="Deleteitem" asp-controller="Grade"  method="post">
+                <input type="hidden" name="id" value="@Model.GradeId" />
+
+                <button type="submit" class="delete-btn">
+                    Delete Grade
+                </button>
+            </form>
+            <a asp-action="Index" class="btn-action back-action-btn">Back to List</a>
+        </div>
+
+    </div>
+</div>

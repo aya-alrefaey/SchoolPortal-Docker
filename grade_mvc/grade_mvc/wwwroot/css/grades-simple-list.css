@@ -1,0 +1,226 @@
+﻿
+body {
+    background-color: #f4f6f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.page-main-title {
+    text-align: center; 
+    color: #253342; 
+    font-size: 2.2rem; 
+    font-weight: 700; 
+    margin-top: 30px; 
+    margin-bottom: 25px; 
+    letter-spacing: -0.5px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ── Container للتحكم في مكان الزرار وجعله على اليمين فوق الجدول ── */
+.action-header-wrapper {
+    display: flex;
+    justify-content: flex-end; /* دفع الزرار لأقصى اليمين */
+    margin-bottom: 16px; /* مسافة بين الزرار والجدول */
+    padding-right: 4px; /* ضبط المحاذاة مع حافة الجدول */
+}
+
+/* 🎯 تصميم الزرار الأزرق المتطابق مع الصورة بالظبط */
+.btn-add-primary {
+    background-color: #3b82f6; /* الأزرق النقي المبهج الموجود بالصورة */
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 12px; /* حواف دائرية واضحة ومودرن مثل الصورة */
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); /* ظل أزرق ناعم يعطي تأثير الـ Floating */
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+    /* تأثير المرور بالماوس (Hover) ليصبح احترافي */
+    .btn-add-primary:hover {
+        background-color: #2563eb; /* درجة أغمق سيكا عند الوقوف عليه */
+        box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+        transform: translateY(-1px); /* رفعة خفيفة جداً للأعلى تحسسك بالضغط */
+    }
+
+    .btn-add-primary:active {
+        transform: translateY(1px);
+    }
+.table-container {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #eef2f5;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); 
+}
+
+.form-container {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.form-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #eef2f5;
+}
+
+
+.grades-list-header {
+    background-color: #253342 !important; 
+    padding: 24px 32px !important;
+    border-bottom: 1px solid #1e2b38;
+}
+
+    .grades-list-header h1 {
+        color: #ffffff !important;
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+.grades-list-body {
+    padding: 32px;
+}
+
+/* تنسيق الجدول الاحترافي */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.grades-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+    /* هيدر الجدول (الكحلي الداكن) تماماً مثل صورة الـ Students المرفقة */
+    .grades-table th {
+        background-color: #2d3d50;
+        color: #ffffff;
+        font-weight: 600;
+        padding: 16px 20px;
+        letter-spacing: 0.5px;
+        border: none;
+    }
+
+    /* حواف دائرية خفيفة لهيدر الجدول من الأطراف */
+    .grades-table thead {
+        border-radius: 8px;
+    }
+
+    .grades-table th:first-child {
+        border-top-left-radius: 8px;
+    }
+
+    .grades-table th:last-child {
+        border-top-right-radius: 8px;
+    }
+
+    /* تنسيق خلايا البيانات */
+    .grades-table td {
+        padding: 16px 20px;
+        border-bottom: 1px solid #f0f4f8;
+        color: #4a5568;
+        vertical-align: middle;
+    }
+
+    /* تأثير الـ Hover الخفيف والناعم عند التمرير على الصفوف */
+    .grades-table tbody tr:hover {
+        background-color: #f8fafc;
+    }
+
+/* تمييز خطوط المعرفات والأسماء */
+.student-name-cell {
+    font-weight: 500;
+    color: #2d3748 !important;
+}
+
+.course-name-cell {
+    color: #4a5568;
+    font-weight: 400;
+}
+
+/* 🎯 تصميم بادج الدرجة مطابق تماماً للصورة الثانية المرفقة (Capsule) */
+.badge {
+    padding: 6px 16px;
+    border-radius: 20px; /* جعل الحواف بيضاوية دائرية تماماً */
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    text-align: center;
+}
+
+/* اللون الأخضر الفاتح المريح للناجح كما في الصورة */
+.badge-success {
+    background-color: #e1fcef;
+    color: #0e834e;
+}
+
+/* اللون الأحمر الهادئ للراسب لحفظ التناسق */
+.badge-danger {
+    background-color: #ffebe9;
+    color: #d9381e;
+}
+
+/* 🎯 تصميم زرار الـ Details الأخضر الجذاب المتناسق مع أزرار الصورة الأولى */
+.details-action-btn {
+    text-decoration: none;
+    background-color: #e1fcef; /* نفس روح لون زر الـ Details الأخضر في صورتكِ */
+    color: #0e834e;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+    /* عند تمرير الماوس فوق الزرار */
+    .details-action-btn:hover {
+        background-color: #0e834e;
+        color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 10px rgba(14, 131, 78, 0.15);
+    }
+
+.text-center {
+    text-align: center;
+}
+
+.no-data {
+    color: #718096;
+    padding: 40px !important;
+    font-style: italic;
+}
+.alert.alert-warning {
+    background-color: #fffbeb !important; /* لون أصفر دافئ، ناعم وخفيف جداً مريح للعين */
+    color: #b45309 !important; /* كتابة باللون البني/الذهبي الداكن الواضح للقراءة */
+    border: 1px solid #fef3c7 !important; /* حواف خفيفة جداً متناسقة مع الخلفية لمنع التداخل */
+    padding: 14px 20px !important; /* مساحة داخلية مريحة تعطي نفَس للنص */
+    border-radius: 12px !important; /* حواف دائرية ناعمة 12px تطابق أزرار وفورم مشروعك بالملي */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important; /* خط متوسط الوضوح */
+    margin-bottom: 24px !important; /* مسافة أمان تفصله عن العناصر اللي تحته بانتظام */
+    box-shadow: 0 4px 12px rgba(180, 83, 9, 0.03); /* ظل ناعم خفيف جداً بلون متناسق يعطي عمق للكارت */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* مسافة ثابتة لو حبتي تضيفي إيموجي أو أيقونة قبل النص */
+    width: 100%;
+    box-sizing: border-box; /* يضمن إن الـ Padding ما يزودش عرض الصندوق عن الشاشة */
+    margin-left: 25px ;
+    margin-right:25px
+}

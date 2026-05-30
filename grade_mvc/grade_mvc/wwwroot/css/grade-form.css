@@ -1,0 +1,183 @@
+﻿
+.page-main-title {
+    text-align: center;
+    color: #253342; 
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-top: 35px;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.form-container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form-card-box {
+    background: #ffffff;
+    border-radius: 16px; 
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04); 
+    padding: 40px;
+    border: 1px solid #eef2f5;
+}
+
+
+.modern-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 24px;
+}
+
+.form-group-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+   
+    .form-group-row.full-width {
+        grid-column: span 2;
+    }
+
+
+.form-label-style {
+    color: #4a5568;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+
+.form-control-style {
+    background-color: #f8fafc; 
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    color: #2d3748;
+    font-family: inherit;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+}
+
+    
+    .form-control-style:focus {
+        background-color: #ffffff;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+.textarea-style {
+    resize: vertical;
+    min-height: 100px;
+}
+.form-actions-footer {
+    grid-column: span 2;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+    margin-top: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f4f8;
+}
+
+
+.btn-submit-primary {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px; 
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+    transition: all 0.2s ease;
+}
+
+    .btn-submit-primary:hover {
+        background-color: #2563eb;
+        box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+        transform: translateY(-1px);
+    }
+
+
+.btn-cancel-secondary {
+    background-color: #ffffff;
+    color: #4a5568;
+    border: 1px solid #cbd5e1;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+    .btn-cancel-secondary:hover {
+        background-color: #f1f5f9;
+        color: #111827;
+    }
+
+
+.field-validation-error {
+    color: #dc2626;
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+.text-danger-summary {
+    color: #dc2626;
+    grid-column: span 2;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+@media (max-width: 768px) {
+    .modern-form {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .form-group-row.full-width, .form-actions-footer {
+        grid-column: span 1;
+    }
+
+    .form-actions-footer {
+        flex-direction: column;
+    }
+
+    .btn-submit-primary, .btn-cancel-secondary {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-card-box {
+        padding: 24px;
+    }
+}
+
+
+.alert.alert-warning {
+    background-color: #fffbeb !important; /* لون أصفر دافئ، ناعم وخفيف جداً مريح للعين */
+    color: #b45309 !important; /* كتابة باللون البني/الذهبي الداكن الواضح للقراءة */
+    border: 1px solid #fef3c7 !important; /* حواف خفيفة جداً متناسقة مع الخلفية لمنع التداخل */
+    padding: 14px 20px !important; /* مساحة داخلية مريحة تعطي نفَس للنص */
+    border-radius: 12px !important; /* حواف دائرية ناعمة 12px تطابق أزرار وفورم مشروعك بالملي */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important; /* خط متوسط الوضوح */
+    margin-bottom: 24px !important; /* مسافة أمان تفصله عن العناصر اللي تحته بانتظام */
+    box-shadow: 0 4px 12px rgba(180, 83, 9, 0.03); /* ظل ناعم خفيف جداً بلون متناسق يعطي عمق للكارت */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* مسافة ثابتة لو حبتي تضيفي إيموجي أو أيقونة قبل النص */
+    width: 100%;
+    box-sizing: border-box; /* يضمن إن الـ Padding ما يزودش عرض الصندوق عن الشاشة */
+}

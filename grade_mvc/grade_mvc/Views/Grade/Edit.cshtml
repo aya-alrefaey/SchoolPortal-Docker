@@ -1,0 +1,71 @@
+﻿@model grade_mvc.Viewmodels.CreateViewmodel
+
+@{
+    ViewData["Title"] = "Edit Grade";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/grade-form.css" />
+}
+
+<div class="form-container">
+    <h1 class="page-main-title">Edit Grade Details</h1>
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-warning">
+            @ViewBag.ErrorMessage
+        </div>
+    }
+
+    <div class="form-card-box">
+        <form asp-action="Edit" method="post" class="modern-form">
+            <div asp-validation-summary="ModelOnly" class="text-danger-summary"></div>
+
+            <input type="hidden" asp-for="Grade.Id" />
+
+            <div class="form-group-row">
+                <label asp-for="Grade.StudentId" class="form-label-style">Student Name</label>
+                <select asp-for="Grade.StudentId" class="form-control-style"
+                        asp-items="@(new SelectList(Model.Students, "Id", "Name", Model.Grade?.StudentId))">
+                    <option value="">-- Choose a Student --</option>
+                </select>
+                <span asp-validation-for="Grade.StudentId" class="field-validation-error"></span>
+            </div>
+
+            <div class="form-group-row">
+                <label asp-for="Grade.CourseName" class="form-label-style">Course Name</label>
+                <input asp-for="Grade.CourseName" class="form-control-style" placeholder="e.g., Software Engineering" />
+                <span asp-validation-for="Grade.CourseName" class="field-validation-error"></span>
+            </div>
+
+            <div class="form-group-row">
+                <label asp-for="Grade.Score" class="form-label-style">Score / 100</label>
+                <input asp-for="Grade.Score" type="number" min="0" max="100" class="form-control-style" placeholder="e.g., 85" />
+                <span asp-validation-for="Grade.Score" class="field-validation-error"></span>
+            </div>
+
+            <div class="form-group-row">
+                <label asp-for="Grade.GradeDate" class="form-label-style">Grade Date</label>
+                <input asp-for="Grade.GradeDate" type="date" class="form-control-style" />
+                <span asp-validation-for="Grade.GradeDate" class="field-validation-error"></span>
+            </div>
+
+            <div class="form-group-row full-width">
+                <label asp-for="Grade.Notes" class="form-label-style">Teacher's Notes (Optional)</label>
+                <textarea asp-for="Grade.Notes" class="form-control-style textarea-style" rows="4" placeholder="Write any remarks..."></textarea>
+                <span asp-validation-for="Grade.Notes" class="field-validation-error"></span>
+            </div>
+
+            <div class="form-actions-footer">
+                <button type="submit" class="btn-submit-primary">Save Changes</button>
+                <a asp-action="Index" class="btn-cancel-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

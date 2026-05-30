@@ -1,0 +1,277 @@
+﻿/* ==========================================================================
+   تنسيق صفحة تفاصيل الدرجة (Grade Details Profile)
+   ========================================================================== */
+
+/* العنوان الرئيسي في المنتصف تماماً مثل All Students */
+.page-main-title {
+    text-align: center;
+    color: #253342;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* حاوية الصفحة الكبيرة لتعطي نفس مقاس الـ Index */
+.form-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #eef2f5;
+}
+
+/* هيدر كارت التفاصيل العلوي */
+.details-profile-header {
+    display: flex;
+    align-items: center;
+    padding: 32px;
+    background-color: #f8fafc;
+    border-bottom: 1px solid #eef2f5;
+    gap: 20px;
+    position: relative;
+}
+
+/* دائرة الحرف الأول من اسم الطالب (Avatar) */
+.avatar-circle {
+    width: 64px;
+    height: 64px;
+    background-color: #253342; /* الكحلي الداكن الفخم */
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.profile-meta h2 {
+    margin: 0 0 4px 0;
+    color: #2d3748;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.profile-meta p {
+    margin: 0;
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.score-badge-wrapper {
+    position: absolute;
+    right: 32px;
+}
+
+/* 🎯 بادج الدرجة الـ Capsule المتطابق مع الصورة الثانية */
+.badge {
+    padding: 8px 20px;
+    border-radius: 20px; /* جعل الحواف بيضاوية تماماً */
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.badge-success {
+    background-color: #e1fcef; /* الأخضر الفاتح المريح للعين */
+    color: #0e834e;
+}
+
+.badge-danger {
+    background-color: #ffebe9;
+    color: #d9381e;
+}
+
+/* تقسيم محتوى البيانات لعمودين متناسقين */
+.details-grid-body {
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.details-section h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #253342;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: 2px solid #f0f4f8;
+    padding-bottom: 8px;
+}
+
+/* صفوف عرض المعلومات */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f8fafc;
+    font-size: 0.95rem;
+}
+
+    .info-row.vertical {
+        flex-direction: column;
+        gap: 8px;
+        border-bottom: none;
+    }
+
+.info-label {
+    color: #718096;
+    font-weight: 500;
+}
+
+.info-value {
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.highlight-text {
+    color: #253342;
+}
+
+/* صندوق الملاحظات */
+.notes-box {
+    background-color: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #4a5568;
+    font-weight: 400;
+    font-style: italic;
+    border: 1px solid #eef2f5;
+    margin-top: 4px;
+}
+
+/* فوتر الأزرار أسفل الكارت */
+.details-actions-footer {
+    padding: 24px 32px;
+    background-color: #f8fafc;
+    border-top: 1px solid #eef2f5;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+}
+
+.btn-action {
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+/* 🎯 زر التعديل الأخضر المتناسق مع روح الأزرار في صوركِ */
+.edit-action-btn {
+    background-color: #e1fcef;
+    color: #0e834e;
+}
+
+    .edit-action-btn:hover {
+        background-color: #0e834e;
+        color: #ffffff;
+        transform: translateY(-1px);
+    }
+
+/* زر العودة الرمادي المريح للعين */
+.back-action-btn {
+    background-color: #ffffff;
+    color: #4a5568;
+    border: 1px solid #cbd5e1;
+}
+
+    .back-action-btn:hover {
+        background-color: #f1f5f9;
+        color: #2d3748;
+    }
+
+/* التجاوب مع شاشات الموبايل */
+@media (max-width: 768px) {
+    .details-grid-body {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .details-profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .score-badge-wrapper {
+        position: static;
+        margin-top: 12px;
+    }
+
+    .details-actions-footer {
+        flex-direction: column;
+    }
+
+    .btn-action {
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+/* ── حاوية فورم الحذف لمنع حدوث أي ترحيل للأزرار ── */
+form[asp-action="Deleteitem"] {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+
+.delete-btn {
+    background-color: #ffebe9 !important; 
+    color: #d9381e !important; 
+    border: 0.5px solid #fecaca !important; 
+    padding: 10px 10px !important; 
+    border-radius: 12px !important; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important; 
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(217, 56, 30, 0.05); 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out !important; 
+}
+
+    /* 🔥 تأثير المرور بالماوس (Hover) يتحول لأحمر قوي وواضح عند الرغبة في الحذف فعلياً */
+    .delete-btn:hover {
+        background-color: #d9381e !important; /* يتحول للون الأحمر الكامل */
+        color: #ffffff !important; /* تتحول الكتابة للأبيض الصريح */
+        border-color: #d9381e !important;
+        box-shadow: 0 6px 16px rgba(217, 56, 30, 0.25) !important; /* ظل أقوى يوضح الأكشن */
+        transform: translateY(-1px); /* رفعة خفيفة جداً للأعلى تعطي إحساساً رائعاً بالتفاعل */
+    }
+
+    /* تأثير عند الضغط الفعلي بالماوس (Click) */
+    .delete-btn:active {
+        transform: translateY(1px);
+    }
+.alert.alert-warning {
+    background-color: #fffbeb !important; /* لون أصفر دافئ، ناعم وخفيف جداً مريح للعين */
+    color: #b45309 !important; /* كتابة باللون البني/الذهبي الداكن الواضح للقراءة */
+    border: 1px solid #fef3c7 !important; /* حواف خفيفة جداً متناسقة مع الخلفية لمنع التداخل */
+    padding: 14px 20px !important; /* مساحة داخلية مريحة تعطي نفَس للنص */
+    border-radius: 12px !important; /* حواف دائرية ناعمة 12px تطابق أزرار وفورم مشروعك بالملي */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important; /* خط متوسط الوضوح */
+    margin-bottom: 24px !important; /* مسافة أمان تفصله عن العناصر اللي تحته بانتظام */
+    box-shadow: 0 4px 12px rgba(180, 83, 9, 0.03); /* ظل ناعم خفيف جداً بلون متناسق يعطي عمق للكارت */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* مسافة ثابتة لو حبتي تضيفي إيموجي أو أيقونة قبل النص */
+    width: 100%;
+    box-sizing: border-box; /* يضمن إن الـ Padding ما يزودش عرض الصندوق عن الشاشة */
+}

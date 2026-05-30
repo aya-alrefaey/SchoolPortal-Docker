@@ -1,0 +1,46 @@
+version: '3'
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Aya@aya123456"
+    ports:
+      - "1433:1433"
+    volumes:
+       - data:/var/opt/mssql
+    networks:
+       - school-network
+    
+  student-mvc:
+     build: 
+       context: ./student_mvc/student_mvc
+       dockerfile: Dockerfile
+     environment:
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=StudentDB;User Id=sa;Password=Aya@aya123456;TrustServerCertificate=True
+     depends_on:
+      - sqlserver
+     ports:
+       - "5001:8080"
+     networks:
+        - school-network
+    
+  grade-mvc:
+     build: 
+       context: ./grade_mvc/grade_mvc
+       dockerfile: Dockerfile
+     environment:
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=GradeDB;User Id=sa;Password=Aya@aya123456;TrustServerCertificate=True
+      - StudentsApi__BaseUrl=http://student-mvc:8080
+       
+     depends_on:
+      - sqlserver
+     ports:
+       - "5002:8080"
+     networks:
+        - school-network
+volumes:
+  data:
+networks:
+  school-network:
+   

@@ -1,0 +1,377 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Route Tasks\\docker\\grade_mvc\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|e:\\route tasks\\docker\\grade_mvc\\grade_mvc\\services\\studentserviceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|solutionrelative:grade_mvc\\services\\studentserviceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|e:\\route tasks\\docker\\grade_mvc\\grade_mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|solutionrelative:grade_mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|e:\\route tasks\\docker\\grade_mvc\\grade_mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|solutionrelative:grade_mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|e:\\route tasks\\docker\\grade_mvc\\grade_mvc\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|solutionrelative:grade_mvc\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|e:\\route tasks\\docker\\grade_mvc\\grade_mvc\\wwwroot\\css\\grades-simple-list.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|solutionrelative:grade_mvc\\wwwroot\\css\\grades-simple-list.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|e:\\route tasks\\docker\\grade_mvc\\grade_mvc\\wwwroot\\css\\grade-form.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|solutionrelative:grade_mvc\\wwwroot\\css\\grade-form.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|e:\\route tasks\\docker\\grade_mvc\\grade_mvc\\views\\grade\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|solutionrelative:grade_mvc\\views\\grade\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|e:\\route tasks\\docker\\grade_mvc\\grade_mvc\\views\\grade\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|solutionrelative:grade_mvc\\views\\grade\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|e:\\route tasks\\docker\\grade_mvc\\grade_mvc\\controllers\\gradecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|solutionrelative:grade_mvc\\controllers\\gradecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|e:\\route tasks\\docker\\grade_mvc\\grade_mvc\\views\\grade\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|solutionrelative:grade_mvc\\views\\grade\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|e:\\route tasks\\docker\\grade_mvc\\grade_mvc\\wwwroot\\css\\grade-details.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|solutionrelative:grade_mvc\\wwwroot\\css\\grade-details.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|e:\\route tasks\\docker\\grade_mvc\\grade_mvc\\viewmodels\\indexviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|solutionrelative:grade_mvc\\viewmodels\\indexviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|e:\\route tasks\\docker\\grade_mvc\\grade_mvc\\enums\\gender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02C8582A-BB63-4AD4-8EF6-56A52E2F8F1D}|grade_mvc\\grade_mvc.csproj|solutionrelative:grade_mvc\\enums\\gender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 27,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StudentServiceClient.cs",
+              "DocumentMoniker": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\services\\StudentServiceClient.cs",
+              "RelativeDocumentMoniker": "grade_mvc\\services\\StudentServiceClient.cs",
+              "ToolTip": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\services\\StudentServiceClient.cs",
+              "RelativeToolTip": "grade_mvc\\services\\StudentServiceClient.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAcwD0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T16:36:25.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\Program.cs",
+              "RelativeDocumentMoniker": "grade_mvc\\Program.cs",
+              "ToolTip": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\Program.cs",
+              "RelativeToolTip": "grade_mvc\\Program.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAcwDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T16:00:11.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "grades-simple-list.css",
+              "DocumentMoniker": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\wwwroot\\css\\grades-simple-list.css",
+              "RelativeDocumentMoniker": "grade_mvc\\wwwroot\\css\\grades-simple-list.css",
+              "ToolTip": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\wwwroot\\css\\grades-simple-list.css",
+              "RelativeToolTip": "grade_mvc\\wwwroot\\css\\grades-simple-list.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-30T15:49:13.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\Dockerfile",
+              "RelativeDocumentMoniker": "grade_mvc\\Dockerfile",
+              "ToolTip": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\Dockerfile",
+              "RelativeToolTip": "grade_mvc\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-30T13:59:06.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\Views\\Grade\\Details.cshtml",
+              "RelativeDocumentMoniker": "grade_mvc\\Views\\Grade\\Details.cshtml",
+              "ToolTip": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\Views\\Grade\\Details.cshtml",
+              "RelativeToolTip": "grade_mvc\\Views\\Grade\\Details.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAYwBMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-29T23:01:50.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "grade-details.css",
+              "DocumentMoniker": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\wwwroot\\css\\grade-details.css",
+              "RelativeDocumentMoniker": "grade_mvc\\wwwroot\\css\\grade-details.css",
+              "ToolTip": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\wwwroot\\css\\grade-details.css",
+              "RelativeToolTip": "grade_mvc\\wwwroot\\css\\grade-details.css",
+              "ViewState": "AgIAAAUBAAAAAAAAAAAAABQBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-29T23:08:12.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\appsettings.json",
+              "RelativeDocumentMoniker": "grade_mvc\\appsettings.json",
+              "ToolTip": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\appsettings.json",
+              "RelativeToolTip": "grade_mvc\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-30T15:15:09.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GradeController.cs",
+              "DocumentMoniker": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\Controllers\\GradeController.cs",
+              "RelativeDocumentMoniker": "grade_mvc\\Controllers\\GradeController.cs",
+              "ToolTip": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\Controllers\\GradeController.cs",
+              "RelativeToolTip": "grade_mvc\\Controllers\\GradeController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAACMAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T15:47:25.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\Views\\Grade\\Create.cshtml",
+              "RelativeDocumentMoniker": "grade_mvc\\Views\\Grade\\Create.cshtml",
+              "ToolTip": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\Views\\Grade\\Create.cshtml",
+              "RelativeToolTip": "grade_mvc\\Views\\Grade\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-29T23:28:13.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "grade-form.css",
+              "DocumentMoniker": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\wwwroot\\css\\grade-form.css",
+              "RelativeDocumentMoniker": "grade_mvc\\wwwroot\\css\\grade-form.css",
+              "ToolTip": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\wwwroot\\css\\grade-form.css",
+              "RelativeToolTip": "grade_mvc\\wwwroot\\css\\grade-form.css",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAAAKYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-30T00:03:11.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\Views\\Grade\\Index.cshtml",
+              "RelativeDocumentMoniker": "grade_mvc\\Views\\Grade\\Index.cshtml",
+              "ToolTip": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\Views\\Grade\\Index.cshtml",
+              "RelativeToolTip": "grade_mvc\\Views\\Grade\\Index.cshtml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAcwBQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-29T23:06:44.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IndexViewModel.cs",
+              "DocumentMoniker": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\Viewmodels\\IndexViewModel.cs",
+              "RelativeDocumentMoniker": "grade_mvc\\Viewmodels\\IndexViewModel.cs",
+              "ToolTip": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\Viewmodels\\IndexViewModel.cs",
+              "RelativeToolTip": "grade_mvc\\Viewmodels\\IndexViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-29T21:47:59.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Gender.cs",
+              "DocumentMoniker": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\enums\\Gender.cs",
+              "RelativeDocumentMoniker": "grade_mvc\\enums\\Gender.cs",
+              "ToolTip": "E:\\Route Tasks\\docker\\grade_mvc\\grade_mvc\\enums\\Gender.cs",
+              "RelativeToolTip": "grade_mvc\\enums\\Gender.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-29T20:23:10.332Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 425,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1268,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

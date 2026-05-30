@@ -1,0 +1,273 @@
+﻿/* ==========================================================================
+   تنسيق صفحة تفاصيل الطالب المتطابق تماماً مع تفاصيل الدرجات
+   ========================================================================== */
+
+/* العنوان الرئيسي في المنتصف تماماً */
+.page-main-title {
+    text-align: center;
+    color: #253342;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* حاوية الصفحة الكبيرة لتعطي نفس مقاس الـ Index */
+.form-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #eef2f5;
+}
+
+/* هيدر كارت التفاصيل العلوي */
+.details-profile-header {
+    display: flex;
+    align-items: center;
+    padding: 32px;
+    background-color: #f8fafc;
+    border-bottom: 1px solid #eef2f5;
+    gap: 20px;
+    position: relative;
+}
+
+/* دائرة الحرف الأول من اسم الطالب (Avatar) */
+.avatar-circle {
+    width: 64px;
+    height: 64px;
+    background-color: #253342; /* الكحلي الداكن الفخم */
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.profile-meta h2 {
+    margin: 0 0 4px 0;
+    color: #2d3748;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.profile-meta p {
+    margin: 0;
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.score-badge-wrapper {
+    position: absolute;
+    right: 32px;
+}
+
+/* بادج الـ Capsule البيضاوي */
+.badge {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.badge-success {
+    background-color: #e1fcef; /* الأخضر الفاتح المريح للعين */
+    color: #0e834e;
+}
+
+/* تقسيم محتوى البيانات لعمودين متناسقين */
+.details-grid-body {
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.details-section h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #253342;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: 2px solid #f0f4f8;
+    padding-bottom: 8px;
+}
+
+/* صفوف عرض المعلومات */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f8fafc;
+    font-size: 0.95rem;
+}
+
+    .info-row.vertical {
+        flex-direction: column;
+        gap: 8px;
+        border-bottom: none;
+    }
+
+.info-label {
+    color: #718096;
+    font-weight: 500;
+}
+
+.info-value {
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.highlight-text {
+    color: #253342;
+}
+
+/* صندوق تفاصيل العنوان أو الملاحظات */
+.notes-box {
+    background-color: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #4a5568;
+    font-weight: 400;
+    border: 1px solid #eef2f5;
+    margin-top: 4px;
+}
+
+/* فوتر الأزرار أسفل الكارت */
+.details-actions-footer {
+    padding: 24px 32px;
+    background-color: #f8fafc;
+    border-top: 1px solid #eef2f5;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+    align-items: center; /* يضمن مساواة الأزرار عمودياً مع الفورم */
+}
+
+/* التنسيق الأساسي الموحد للأزرار لتبدو ناعمة وبحواف دائرية 12px */
+.btn-action {
+    text-decoration: none;
+    padding: 0 24px;
+    border-radius: 12px !important; /* حواف دائرية 12px موحدة مع كامل المشروع */
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px; /* توحيد الارتفاع بالملي */
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+/* زر التعديل الأخضر اللطيف */
+.edit-action-btn {
+    background-color: #e1fcef;
+    color: #0e834e;
+}
+
+    .edit-action-btn:hover {
+        background-color: #0e834e;
+        color: #ffffff;
+        transform: translateY(-1px);
+    }
+
+/* زر العودة الرمادي المريح للعين */
+.back-action-btn {
+    background-color: #ffffff;
+    color: #4a5568;
+    border: 1px solid #cbd5e1;
+}
+
+    .back-action-btn:hover {
+        background-color: #f1f5f9;
+        color: #2d3748;
+    }
+
+/* حاوية فورم الحذف لمنع ترحيل الأزرار */
+form[asp-action="Deleteitem"] {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+/* زر الحذف الاحترافي المستوحى من كودكِ */
+.delete-btn {
+    background-color: #ffebe9 !important;
+    color: #d9381e !important;
+    border: 0.5px solid #fecaca !important;
+    padding: 0 24px !important; /* تحويل الـ Padding ليتناسق مع باقي الأزرار */
+    border-radius: 12px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(217, 56, 30, 0.05);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px; /* توحيد الارتفاع بالملي ليتوازى مع باقي الأزرار */
+    transition: all 0.2s ease-in-out !important;
+}
+
+    .delete-btn:hover {
+        background-color: #d9381e !important;
+        color: #ffffff !important;
+        border-color: #d9381e !important;
+        box-shadow: 0 6px 16px rgba(217, 56, 30, 0.25) !important;
+        transform: translateY(-1px);
+    }
+
+    .delete-btn:active {
+        transform: translateY(1px);
+    }
+
+/* التجاوب المرن الكامل مع شاشات الموبايل */
+@media (max-width: 768px) {
+    .details-grid-body {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px;
+    }
+
+    .details-profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+    }
+
+    .score-badge-wrapper {
+        position: static;
+        margin-top: 12px;
+    }
+
+    .details-actions-footer {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 24px;
+        gap: 10px;
+    }
+
+    form[asp-action="Deleteitem"] {
+        display: block;
+        width: 100%;
+    }
+
+    .btn-action, .delete-btn {
+        text-align: center;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+}

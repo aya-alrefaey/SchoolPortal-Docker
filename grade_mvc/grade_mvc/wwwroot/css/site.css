@@ -1,0 +1,43 @@
+/* تنسيقات الـ Layout المباشرة المتوافقة مع الـ Navbar في صورتكِ الأولى */
+body {
+    margin: 0;
+    background-color: #f4f6f9;
+}
+
+/* شريط التنقل العلوي الاحترافي الغامق */
+.main-navbar {
+    background-color: #253342; /* نفس كحلي الصورة الأولى المتطابق */
+    padding: 16px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* اللوجو "StudentHub" بنفس الفكرة والخط العريض الواضح */
+.navbar-brand {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* روابط التنقل الجانبية */
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+    .nav-item-link:hover {
+        color: #ffffff;
+    }
