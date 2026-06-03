@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Portal — Project Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f5f0e8;
+    --accent: #c8401a;
+    --accent2: #1a5c8a;
+    --muted: #7a7060;
+    --border: #d4c9b0;
+    --tag-bg: #e8e0d0;
+    --done: #2a7a4a;
+    --warn: #b85c00;
+    --section-bg: #ede8dc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 0 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.03) 40px,
+      rgba(255,255,255,0.03) 41px
+    );
+  }
+
+  .header-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  h1 span { color: var(--accent); }
+
+  .header-sub {
+    font-size: 1.05rem;
+    color: rgba(245,240,232,0.7);
+    max-width: 560px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 32px;
+  }
+
+  .badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 2px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-outline {
+    border: 1px solid rgba(245,240,232,0.25);
+    color: rgba(245,240,232,0.75);
+  }
+
+  .badge-accent {
+    background: var(--accent);
+    color: white;
+  }
+
+  /* ── LAYOUT ── */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 40px 100px;
+  }
+
+  /* ── OVERVIEW GRID ── */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 60px;
+    border: 2px solid var(--ink);
+    background: var(--ink);
+  }
+
+  .overview-cell {
+    background: var(--paper);
+    padding: 24px 28px;
+  }
+
+  .overview-cell .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .overview-cell .value {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  /* ── ARCHITECTURE BOX ── */
+  .arch-box {
+    border: 2px solid var(--ink);
+    margin-bottom: 60px;
+  }
+
+  .arch-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 12px 24px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .arch-body {
+    padding: 32px 24px;
+    background: var(--section-bg);
+  }
+
+  .arch-diagram {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    line-height: 2;
+    color: var(--ink);
+    white-space: pre;
+    overflow-x: auto;
+  }
+
+  .arch-diagram .highlight { color: var(--accent); font-weight: 500; }
+  .arch-diagram .highlight2 { color: var(--accent2); font-weight: 500; }
+  .arch-diagram .dim { color: var(--muted); }
+
+  /* ── SECTION TITLES ── */
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-title .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 3px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.08em;
+  }
+
+  .section-intro {
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 32px;
+    font-size: 0.95rem;
+  }
+
+  /* ── SERVICE CARDS ── */
+  .service-block {
+    margin-bottom: 56px;
+  }
+
+  .service-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    margin-bottom: 0;
+  }
+
+  .service-label.blue { background: var(--accent2); }
+  .service-label.red  { background: var(--accent); }
+
+  .service-card {
+    border: 2px solid var(--ink);
+    border-top: none;
+  }
+
+  .service-card-header {
+    padding: 20px 28px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--section-bg);
+  }
+
+  .service-card-header h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .service-card-header p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  .task-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .task-item {
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+  }
+
+  .task-item:last-child { border-bottom: none; }
+
+  .task-header {
+    padding: 20px 28px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .task-number {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 3px;
+    min-width: 28px;
+    letter-spacing: 0.05em;
+  }
+
+  .task-content { flex: 1; }
+
+  .task-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .task-desc {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .task-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 3px 8px;
+    background: var(--tag-bg);
+    color: var(--muted);
+    border-radius: 2px;
+    letter-spacing: 0.04em;
+  }
+
+  .tag.mvc    { background: #dde8f5; color: var(--accent2); }
+  .tag.ef     { background: #f5e8dd; color: #8a4a1a; }
+  .tag.docker { background: #ddf5e8; color: var(--done); }
+  .tag.http   { background: #f5dde8; color: #8a1a3a; }
+
+  .task-details {
+    display: none;
+    padding: 0 28px 20px 72px;
+    border-top: 1px dashed var(--border);
+  }
+
+  .task-details.open { display: block; }
+
+  .task-details ul {
+    list-style: none;
+    margin-top: 16px;
+  }
+
+  .task-details ul li {
+    font-size: 0.875rem;
+    padding: 7px 0 7px 20px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .task-details ul li:last-child { border-bottom: none; }
+
+  .task-details ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+  }
+
+  .task-details .hint-box {
+    margin-top: 16px;
+    background: var(--section-bg);
+    border-left: 3px solid var(--accent);
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .task-details .hint-box strong {
+    font-style: normal;
+    color: var(--accent);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .toggle-icon {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    color: var(--muted);
+    margin-top: 2px;
+    transition: transform 0.2s;
+    min-width: 16px;
+  }
+
+  .task-header.open .toggle-icon { transform: rotate(45deg); color: var(--accent); }
+
+  /* ── DOCKER SECTION ── */
+  .docker-section {
+    margin-bottom: 56px;
+  }
+
+  .docker-step {
+    display: flex;
+    gap: 0;
+    margin-bottom: 2px;
+    border: 2px solid var(--ink);
+  }
+
+  .docker-step-num {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 16px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.1em;
+    min-width: 40px;
+  }
+
+  .docker-step-body {
+    padding: 20px 24px;
+    flex: 1;
+  }
+
+  .docker-step-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .docker-step-desc {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .docker-step-tasks {
+    list-style: none;
+    margin-top: 10px;
+  }
+
+  .docker-step-tasks li {
+    font-size: 0.85rem;
+    padding: 5px 0 5px 18px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.5;
+  }
+
+  .docker-step-tasks li:last-child { border-bottom: none; }
+
+  .docker-step-tasks li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--done);
+    font-size: 10px;
+    top: 7px;
+  }
+
+  /* ── CHECKLIST ── */
+  .checklist-section {
+    border: 2px solid var(--ink);
+    margin-bottom: 60px;
+  }
+
+  .checklist-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 24px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .checklist-body {
+    padding: 8px 0;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .check-item:last-child { border-bottom: none; }
+  .check-item:hover { background: var(--section-bg); }
+
+  .check-box {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 2px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+  }
+
+  .check-item.checked .check-box {
+    background: var(--done);
+    border-color: var(--done);
+  }
+
+  .check-item.checked .check-box::after {
+    content: '✓';
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+  }
+
+  .check-item.checked .check-text {
+    text-decoration: line-through;
+    color: var(--muted);
+  }
+
+  .check-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .check-text .sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ── TIPS ── */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 60px;
+  }
+
+  .tip-card {
+    border: 2px solid var(--border);
+    padding: 20px;
+  }
+
+  .tip-card .tip-icon {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .tip-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .tip-card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── DIVIDERS ── */
+  .divider {
+    border: none;
+    border-top: 2px solid var(--border);
+    margin: 52px 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.5);
+    text-align: center;
+    padding: 30px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    main { padding: 40px 20px 80px; }
+    .header-inner { padding: 0 20px; }
+    .overview-grid { grid-template-columns: 1fr; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .arch-diagram { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">Final Project — .NET MVC + Docker</div>
+    <h1>School<span>Portal</span></h1>
+    <p class="header-sub">A two-service MVC application that teaches container communication, Docker Compose networking, and clean separation of concerns.</p>
+    <div class="badges">
+      <span class="badge badge-accent">ASP.NET MVC</span>
+      <span class="badge badge-outline">EF Core + SQL Server</span>
+      <span class="badge badge-outline">Docker Compose</span>
+      <span class="badge badge-outline">HttpClient</span>
+      <span class="badge badge-outline">Multi-Container</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- OVERVIEW GRID -->
+  <div class="overview-grid" style="margin-top: 48px;">
+    <div class="overview-cell">
+      <div class="label">Estimated Duration</div>
+      <div class="value">5 – 7 Days</div>
+    </div>
+    <div class="overview-cell">
+      <div class="label">Number of Services</div>
+      <div class="value">2 MVC + 1 SQL Server</div>
+    </div>
+    <div class="overview-cell">
+      <div class="label">Communication Type</div>
+      <div class="value">HTTP via HttpClient</div>
+    </div>
+    <div class="overview-cell">
+      <div class="label">Difficulty</div>
+      <div class="value">Intermediate</div>
+    </div>
+  </div>
+
+  <!-- ARCHITECTURE -->
+  <div class="arch-box">
+    <div class="arch-header">System Architecture</div>
+    <div class="arch-body">
+      <div class="arch-diagram">
+<span class="dim">Browser (Teacher)        Browser (Admin)</span>
+       │                         │
+       ▼                         ▼
+<span class="highlight">┌─────────────────────┐   ┌──────────────────────────┐</span>
+<span class="highlight">│   Students MVC App  │   │     Grades MVC App       │</span>
+<span class="highlight">│   Port: 5001        │◀──│  Port: 5002              │</span>
+<span class="highlight">│                     │   │  (calls Students via     │</span>
+<span class="highlight">│  - List Students    │   │   HttpClient to get      │</span>
+<span class="highlight">│  - Add Student      │   │   student names)         │</span>
+<span class="highlight">│  - Edit Student     │   │  - List Grades           │</span>
+<span class="highlight">│  - Delete Student   │   │  - Add Grade             │</span>
+<span class="highlight">└─────────────────────┘   └──────────────────────────┘</span>
+       │                              │
+       └──────────────┬───────────────┘
+                      ▼
+<span class="highlight2">         ┌────────────────────────┐</span>
+<span class="highlight2">         │   SQL Server Container │</span>
+<span class="highlight2">         │   (Shared Database)    │</span>
+<span class="highlight2">         │   + Docker Volume      │</span>
+<span class="highlight2">         └────────────────────────┘</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE 1 -->
+  <div class="section-title">
+    <span class="num">PART 01</span>
+    Students MVC App
+  </div>
+  <p class="section-intro">This service owns all student data. It is the source of truth. Click each task to expand the detailed requirements.</p>
+
+  <div class="service-block">
+    <div class="service-label blue">Service A — students-mvc</div>
+    <div class="service-card">
+      <div class="service-card-header">
+        <h3>Students Management</h3>
+        <p>Full CRUD for student records. This service runs independently and exposes its own views.</p>
+      </div>
+
+      <ul class="task-list">
+
+        <li class="task-item">
+          <div class="task-header" onclick="toggleTask(this)">
+            <span class="task-number">T-01</span>
+            <div class="task-content">
+              <div class="task-title">Create the Student Model & Database</div>
+              <div class="task-desc">Define the data structure for a student and set up the database connection using EF Core.</div>
+              <div class="task-tags">
+                <span class="tag ef">EF Core</span>
+                <span class="tag">SQL Server</span>
+                <span class="tag">Migration</span>
+              </div>
+            </div>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="task-details">
+            <ul>
+              <li>Create a <strong>Student</strong> model class with the following fields: Id (int, primary key), FirstName (string, required), LastName (string, required), Email (string, required, unique), DateOfBirth (DateTime), EnrollmentDate (DateTime).</li>
+              <li>Create your <strong>ApplicationDbContext</strong> class that inherits from DbContext and includes a DbSet for Students.</li>
+              <li>Configure the connection string in <strong>appsettings.json</strong> to point to your SQL Server container. The server name should match the service name you'll define later in docker-compose.</li>
+              <li>Register your DbContext in <strong>Program.cs</strong> using the AddDbContext extension method.</li>
+              <li>Create and apply your first <strong>EF Core Migration</strong> to generate the Students table in the database.</li>
+              <li>Verify the table was created by connecting to the SQL Server container directly and checking the schema.</li>
+            </ul>
+            <div class="hint-box">
+              <strong>Think About</strong>
+              What happens to your data if the SQL Server container restarts? How will you make sure migrations run automatically when the app starts?
+            </div>
+          </div>
+        </li>
+
+        <li class="task-item">
+          <div class="task-header" onclick="toggleTask(this)">
+            <span class="task-number">T-02</span>
+            <div class="task-content">
+              <div class="task-title">Build the Students Controller</div>
+              <div class="task-desc">Create a controller that handles all CRUD operations using EF Core and returns Views.</div>
+              <div class="task-tags">
+                <span class="tag mvc">MVC</span>
+                <span class="tag ef">EF Core</span>
+              </div>
+            </div>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="task-details">
+            <ul>
+              <li>Create a <strong>StudentsController</strong> that receives the ApplicationDbContext via constructor injection.</li>
+              <li>Implement the <strong>Index</strong> action: fetch all students from the database and pass them to the view as a list.</li>
+              <li>Implement the <strong>Create</strong> actions (GET and POST): GET returns an empty form view; POST validates the model, saves the new student, and redirects to Index.</li>
+              <li>Implement the <strong>Edit</strong> actions (GET and POST): GET fetches the student by Id and returns a pre-filled form; POST validates and updates the record.</li>
+              <li>Implement the <strong>Delete</strong> actions (GET and POST): GET shows a confirmation page; POST removes the student from the database.</li>
+              <li>Implement the <strong>Details</strong> action: fetches a single student and shows their full information.</li>
+              <li>Always handle the case where a student with the given Id is <strong>not found</strong> — return a 404 result.</li>
+              <li>Use <strong>ModelState.IsValid</strong> to validate forms before saving to the database.</li>
+            </ul>
+            <div class="hint-box">
+              <strong>Think About</strong>
+              Should you use async/await for your database calls? What's the difference between SaveChanges() and SaveChangesAsync()?
+            </div>
+          </div>
+        </li>
+
+        <li class="task-item">
+          <div class="task-header" onclick="toggleTask(this)">
+            <span class="task-number">T-03</span>
+            <div class="task-content">
+              <div class="task-title">Build the Students Views</div>
+              <div class="task-desc">Create Razor views for listing, creating, editing, deleting, and viewing student details.</div>
+              <div class="task-tags">
+                <span class="tag mvc">MVC</span>
+                <span class="tag">Razor</span>
+              </div>
+            </div>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="task-details">
+            <ul>
+              <li>Create <strong>Index.cshtml</strong>: display all students in a clean table with columns for name, email, and enrollment date. Include action links for Details, Edit, and Delete next to each row. Add a prominent "Add New Student" button at the top.</li>
+              <li>Create <strong>Create.cshtml</strong>: build a form with labeled inputs for all required fields. Use tag helpers (asp-for, asp-validation-for) for proper model binding and validation messages. Include a Cancel link back to Index.</li>
+              <li>Create <strong>Edit.cshtml</strong>: similar to Create but pre-filled with existing data. The Id field should be hidden, not editable.</li>
+              <li>Create <strong>Delete.cshtml</strong>: show the student's name and ask for confirmation. Include both a Confirm Delete button and a Cancel link.</li>
+              <li>Create <strong>Details.cshtml</strong>: show all fields of the student in a readable layout. Include an Edit and Back button.</li>
+              <li>Make sure validation summary and field-level error messages appear when the form is submitted with invalid data.</li>
+            </ul>
+            <div class="hint-box">
+              <strong>Think About</strong>
+              How do you use @model at the top of each view to strongly type it? What does asp-action and asp-controller do in your anchor tags?
+            </div>
+          </div>
+        </li>
+
+        <li class="task-item">
+          <div class="task-header" onclick="toggleTask(this)">
+            <span class="task-number">T-04</span>
+            <div class="task-content">
+              <div class="task-title">Expose a JSON Endpoint for the Grades Service</div>
+              <div class="task-desc">The Grades MVC app needs to fetch student names. Create an action that returns student data as JSON.</div>
+              <div class="task-tags">
+                <span class="tag http">HTTP</span>
+                <span class="tag mvc">MVC</span>
+                <span class="tag">JSON</span>
+              </div>
+            </div>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="task-details">
+            <ul>
+              <li>Add a new action in StudentsController called <strong>GetAll</strong> (or similar) that returns <strong>Json(students)</strong> — a JSON list of all students with at least their Id, FirstName, and LastName.</li>
+              <li>Add another action called <strong>GetById</strong> that accepts an Id parameter and returns a single student as JSON, or a 404 if not found.</li>
+              <li>These actions are <strong>not normal views</strong> — they return data, not HTML. Think about the return type.</li>
+              <li>Test these endpoints manually in a browser or via a tool like Postman before the Grades service tries to call them.</li>
+            </ul>
+            <div class="hint-box">
+              <strong>Think About</strong>
+              Why does the Grades service need to call Students? Could you have stored student names directly in the Grades database instead? What are the trade-offs?
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- SERVICE 2 -->
+  <div class="section-title">
+    <span class="num">PART 02</span>
+    Grades MVC App
+  </div>
+  <p class="section-intro">This service manages grades. It talks to the Students service over HTTP to get student names — this is where Docker container communication happens.</p>
+
+  <div class="service-block">
+    <div class="service-label red">Service B — grades-mvc</div>
+    <div class="service-card">
+      <div class="service-card-header">
+        <h3>Grades Management + Service Communication</h3>
+        <p>CRUD for grades. Fetches student names from the Students service using HttpClient.</p>
+      </div>
+
+      <ul class="task-list">
+
+        <li class="task-item">
+          <div class="task-header" onclick="toggleTask(this)">
+            <span class="task-number">T-05</span>
+            <div class="task-content">
+              <div class="task-title">Create the Grade Model & Database</div>
+              <div class="task-desc">Define the Grade data structure. Note: no foreign key to a Student entity — the student Id is just a number here.</div>
+              <div class="task-tags">
+                <span class="tag ef">EF Core</span>
+                <span class="tag">SQL Server</span>
+              </div>
+            </div>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="task-details">
+            <ul>
+              <li>Create a <strong>Grade</strong> model with: Id (int, primary key), StudentId (int — just an integer, no navigation property), CourseName (string, required), Score (decimal or double), GradeDate (DateTime), Notes (string, optional).</li>
+              <li>Create a <strong>separate ApplicationDbContext</strong> for this service. It connects to the same SQL Server container but a <strong>different database name</strong> (e.g. GradesDb vs StudentsDb).</li>
+              <li>Configure the connection string in appsettings.json for this service pointing to the SQL Server container service name.</li>
+              <li>Create and run the EF Core migration to generate the Grades table.</li>
+            </ul>
+            <div class="hint-box">
+              <strong>Think About</strong>
+              Why is StudentId just an int here and not a navigation property (Student entity)? What does this tell you about how microservices keep their data separate?
+            </div>
+          </div>
+        </li>
+
+        <li class="task-item">
+          <div class="task-header" onclick="toggleTask(this)">
+            <span class="task-number">T-06</span>
+            <div class="task-content">
+              <div class="task-title">Set Up HttpClient to Call the Students Service</div>
+              <div class="task-desc">Register and configure HttpClient to communicate with the Students MVC app using its Docker Compose service name.</div>
+              <div class="task-tags">
+                <span class="tag http">HTTP</span>
+                <span class="tag docker">Docker</span>
+              </div>
+            </div>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="task-details">
+            <ul>
+              <li>In <strong>Program.cs</strong> of the Grades app, register a typed or named HttpClient using <strong>builder.Services.AddHttpClient</strong>.</li>
+              <li>Set the <strong>BaseAddress</strong> of the HttpClient to the Students service URL. Inside Docker Compose, you use the service name as the hostname (e.g. <code>http://students-mvc:80</code>), NOT localhost.</li>
+              <li>Store this base URL in <strong>appsettings.json</strong> so it's easy to change without touching code.</li>
+              <li>Create a <strong>StudentsServiceClient</strong> class (or similar) that wraps the HttpClient and has methods like GetAllStudents() and GetStudentById(int id).</li>
+              <li>Register this class in Program.cs so it can be injected into controllers.</li>
+            </ul>
+            <div class="hint-box">
+              <strong>Think About</strong>
+              Why can't you use "localhost" to call the Students service from inside the Grades container? What does Docker Compose do to allow containers to find each other by name?
+            </div>
+          </div>
+        </li>
+
+        <li class="task-item">
+          <div class="task-header" onclick="toggleTask(this)">
+            <span class="task-number">T-07</span>
+            <div class="task-content">
+              <div class="task-title">Build the Grades Controller</div>
+              <div class="task-desc">Create a controller that combines data from your local database AND from the Students service.</div>
+              <div class="task-tags">
+                <span class="tag mvc">MVC</span>
+                <span class="tag ef">EF Core</span>
+                <span class="tag http">HTTP</span>
+              </div>
+            </div>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="task-details">
+            <ul>
+              <li>Create a <strong>GradesController</strong> that receives both the ApplicationDbContext AND the StudentsServiceClient via constructor injection.</li>
+              <li>Implement <strong>Index</strong>: fetch all grades from your local DB. For each grade, call the Students service to get the student's name using the stored StudentId. Build a combined view model that has the grade info + student name together.</li>
+              <li>Implement <strong>Create (GET)</strong>: call the Students service to get all students, build a dropdown list from the result, and pass it to the view so the teacher can select a student.</li>
+              <li>Implement <strong>Create (POST)</strong>: validate the model, save the new grade to the local DB, redirect to Index.</li>
+              <li>Implement <strong>Edit</strong>, <strong>Delete</strong>, and <strong>Details</strong> — same pattern as the Students controller.</li>
+              <li>Handle the case where the Students service is <strong>unavailable or returns an error</strong>. Don't let the Grades app crash — show a friendly message instead.</li>
+            </ul>
+            <div class="hint-box">
+              <strong>Think About</strong>
+              What happens if the Students service is slow? What's the difference between calling it once on Index vs calling it once per grade row? Which is more efficient?
+            </div>
+          </div>
+        </li>
+
+        <li class="task-item">
+          <div class="task-header" onclick="toggleTask(this)">
+            <span class="task-number">T-08</span>
+            <div class="task-content">
+              <div class="task-title">Build the Grades Views</div>
+              <div class="task-desc">Create Razor views that display combined data — grade info AND student names from the other service.</div>
+              <div class="task-tags">
+                <span class="tag mvc">MVC</span>
+                <span class="tag">Razor</span>
+              </div>
+            </div>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="task-details">
+            <ul>
+              <li>Create a <strong>GradeViewModel</strong> class (not a database model) that holds: GradeId, StudentId, StudentFullName, CourseName, Score, GradeDate, Notes. Your views should use this ViewModel, not the raw Grade entity.</li>
+              <li>Create <strong>Index.cshtml</strong>: display a table showing student name (not id), course, score, and date. Include Edit/Delete/Details links.</li>
+              <li>Create <strong>Create.cshtml</strong>: show a dropdown populated with students fetched from the other service, plus inputs for CourseName, Score, Date, Notes.</li>
+              <li>Create <strong>Edit.cshtml</strong>: pre-filled form. The student dropdown should show the currently selected student.</li>
+              <li>Create <strong>Delete.cshtml</strong>: confirmation page showing student name and course.</li>
+              <li>If the Students service is unavailable, the Index page should still load — just show the StudentId number instead of the name, with a warning message at the top.</li>
+            </ul>
+            <div class="hint-box">
+              <strong>Think About</strong>
+              Why should you use a ViewModel instead of passing the raw Grade model to your view? What is the single responsibility of a ViewModel?
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- DOCKER PART -->
+  <hr class="divider">
+  <div class="section-title">
+    <span class="num">PART 03</span>
+    Docker & Infrastructure
+  </div>
+  <p class="section-intro">This is where everything comes together. You'll containerize both apps and wire them with Docker Compose.</p>
+
+  <div class="docker-section">
+
+    <div class="docker-step">
+      <div class="docker-step-num">STEP 1</div>
+      <div class="docker-step-body">
+        <div class="docker-step-title">Write the Dockerfile for Students MVC</div>
+        <div class="docker-step-desc">Containerize the Students MVC application using a multi-stage Dockerfile.</div>
+        <ul class="docker-step-tasks">
+          <li>Use a <strong>multi-stage build</strong>: Stage 1 uses the .NET SDK image to build and publish the app. Stage 2 uses the smaller .NET Runtime (ASP.NET) image to run it.</li>
+          <li>In Stage 1, copy only the <strong>.csproj</strong> file first and run <code>dotnet restore</code> before copying the rest of the code. This is important for Docker layer caching.</li>
+          <li>In Stage 1, run <code>dotnet publish</code> with Release configuration and output to a folder.</li>
+          <li>In Stage 2, copy the published output from Stage 1 into the runtime image.</li>
+          <li>Set the <strong>ENTRYPOINT</strong> to run your application's DLL.</li>
+          <li>Expose the correct port (80 or 8080 depending on the .NET version you're using).</li>
+          <li>Test the Dockerfile locally by building and running it manually before using it in Compose.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="docker-step">
+      <div class="docker-step-num">STEP 2</div>
+      <div class="docker-step-body">
+        <div class="docker-step-title">Write the Dockerfile for Grades MVC</div>
+        <div class="docker-step-desc">The Grades app needs its own separate Dockerfile. It should be nearly identical to the Students Dockerfile.</div>
+        <ul class="docker-step-tasks">
+          <li>Create a <strong>separate Dockerfile</strong> inside the Grades MVC project folder. Do not share a Dockerfile between projects.</li>
+          <li>Follow the exact same multi-stage build pattern as the Students service.</li>
+          <li>Make sure the ENTRYPOINT points to the Grades app's DLL name, not the Students one.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="docker-step">
+      <div class="docker-step-num">STEP 3</div>
+      <div class="docker-step-body">
+        <div class="docker-step-title">Write the docker-compose.yml</div>
+        <div class="docker-step-desc">This is the heart of the project. Wire all three services together with networking and volumes.</div>
+        <ul class="docker-step-tasks">
+          <li>Define three services: <strong>students-mvc</strong>, <strong>grades-mvc</strong>, and <strong>sqlserver</strong>.</li>
+          <li>For <strong>sqlserver</strong>: use the official Microsoft SQL Server image. Set the required environment variables (ACCEPT_EULA, SA_PASSWORD). Map port 1433. Mount a named volume for data persistence.</li>
+          <li>For <strong>students-mvc</strong>: use <code>build: ./StudentsApp</code> (pointing to its Dockerfile location). Map host port 5001 to container port 80. Set an environment variable to override the connection string so it points to <code>sqlserver</code> (the service name).</li>
+          <li>For <strong>grades-mvc</strong>: same pattern, host port 5002. Override both the connection string and the Students service base URL via environment variables.</li>
+          <li>Add a <strong>depends_on</strong> to both MVC services so they wait for sqlserver to be ready first.</li>
+          <li>Make sure all three services are on the <strong>same custom Docker network</strong> so they can find each other by service name.</li>
+          <li>Define the named <strong>volume</strong> for SQL Server data at the bottom of the file under the <code>volumes:</code> key.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="docker-step">
+      <div class="docker-step-num">STEP 4</div>
+      <div class="docker-step-body">
+        <div class="docker-step-title">Run & Verify Everything Works</div>
+        <div class="docker-step-desc">Bring the full stack up and confirm all services are communicating correctly.</div>
+        <ul class="docker-step-tasks">
+          <li>Run <code>docker compose up --build</code> and watch the logs. Both MVC apps and SQL Server should all start without errors.</li>
+          <li>Open <strong>localhost:5001</strong> in your browser — you should see the Students app. Add a few students.</li>
+          <li>Open <strong>localhost:5002</strong> — you should see the Grades app. When you click "Add Grade", the student dropdown should be populated with students from the other service.</li>
+          <li>Add a grade — verify it's saved and shows the student's name correctly on the list.</li>
+          <li>Stop all containers with <code>docker compose down</code> and bring them back up. Verify the data is still there (because of the volume).</li>
+          <li>Stop only the <strong>students-mvc</strong> container. Reload the Grades index page. Verify it handles the error gracefully instead of crashing.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SUBMISSION CHECKLIST -->
+  <div class="checklist-section">
+    <div class="checklist-header">
+      ✓ &nbsp; Submission Checklist
+    </div>
+    <div class="checklist-body">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          Students MVC: Full CRUD working (list, add, edit, delete, details)
+          <span class="sub">All views render correctly with validation messages</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          Students MVC: JSON endpoint returns student list and single student by ID
+          <span class="sub">Tested manually before integration</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          Grades MVC: Full CRUD working with student name shown (not just ID)
+          <span class="sub">Create form shows dropdown of real students</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          HttpClient communication works between containers using Docker service names
+          <span class="sub">Not using localhost — using the Compose service name</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          Both apps have a valid multi-stage Dockerfile
+          <span class="sub">Builds successfully with docker build</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          docker-compose.yml brings up all 3 services with one command
+          <span class="sub">docker compose up --build works from scratch</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          SQL Server data persists after docker compose down and up
+          <span class="sub">Named volume is configured correctly</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          Grades app handles Students service being offline gracefully
+          <span class="sub">No unhandled exceptions — shows fallback message</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          Connection strings are configured via environment variables in Compose
+          <span class="sub">No hardcoded server names in appsettings.json</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">
+          EF Core migrations run automatically on app startup
+          <span class="sub">No manual migration steps required after docker compose up</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIPS -->
+  <div class="section-title" style="margin-bottom: 24px;">
+    <span class="num">TIPS</span>
+    Common Pitfalls to Avoid
+  </div>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">🔌</div>
+      <h4>Container Startup Order</h4>
+      <p>SQL Server takes a few seconds to be truly ready even after the container starts. If migrations fail on startup, you may need to add retry logic or a health check in your Compose file.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🌐</div>
+      <h4>Service Names, Not Localhost</h4>
+      <p>Inside Docker Compose, containers find each other by their service name. "localhost" always means the current container. This is the #1 mistake beginners make.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🔑</div>
+      <h4>SA Password Requirements</h4>
+      <p>SQL Server requires a strong password for the SA account (uppercase, lowercase, number, symbol, min 8 chars). A weak password will silently cause the container to fail to start.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🏗️</div>
+      <h4>Build Context in Compose</h4>
+      <p>The <code>build:</code> path in docker-compose.yml is relative to the compose file location. Make sure it points to the folder that contains each project's Dockerfile.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📦</div>
+      <h4>Layer Caching Matters</h4>
+      <p>In your Dockerfile, always copy the .csproj and restore packages BEFORE copying the rest of the code. This way Docker reuses the cached layer if only your code changed.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🛡️</div>
+      <h4>Handle HttpClient Errors</h4>
+      <p>Wrap your HttpClient calls in try/catch. If the Students service is down, your Grades controller should not throw an unhandled exception — it should return a fallback result.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  School Portal Project Brief &nbsp;·&nbsp; ASP.NET MVC + Docker Compose &nbsp;·&nbsp; Good luck!
+</footer>
+
+<script>
+  function toggleTask(header) {
+    const details = header.nextElementSibling;
+    const isOpen = details.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.task-details').forEach(d => d.classList.remove('open'));
+    document.querySelectorAll('.task-header').forEach(h => h.classList.remove('open'));
+    // Open clicked if it was closed
+    if (!isOpen) {
+      details.classList.add('open');
+      header.classList.add('open');
+    }
+  }
+
+  function toggleCheck(item) {
+    item.classList.toggle('checked');
+  }
+</script>
+
+</body>
+</html>
